@@ -68,6 +68,15 @@ section { padding: 88px 0; }
 .band .wrap { display: flex; align-items: center; justify-content: center; gap: 18px; flex-wrap: wrap; text-align: center; }
 .code { font-family: "JBMono", monospace; font-weight: 700; color: var(--accent-ink); background: var(--accent); border: 0; border-radius: var(--r); padding: 6px 12px; font-size: 15px; cursor: pointer; }
 .code[data-done="1"]::after { content: " copied"; font-weight: 400; }
+.band { background: #2a2414; border-color: #5a4a1c; padding: 20px 0; font-size: 18px; }
+.band strong { color: var(--accent); font-size: 22px; }
+.band s, .launch s, .price s { color: var(--muted); text-decoration-thickness: 2px; }
+.band .tag { font-family: "Anton", sans-serif; text-transform: uppercase; letter-spacing: .04em; font-size: 15px; color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 4px 12px; }
+.band .muted { color: var(--muted); font-size: 15px; }
+.band .code { font-size: 18px; padding: 8px 16px; outline: 2px dashed var(--accent); outline-offset: 3px; }
+.launch { margin-top: 18px; color: var(--muted); font-size: 15px; }
+.launch strong { color: var(--accent); }
+.launch b { font-family: "JBMono", monospace; color: var(--text); }
 
 /* styles: asymmetric trio */
 .styles .grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 18px; margin-top: 40px; }
@@ -144,7 +153,8 @@ details p { color: var(--muted); margin-top: 12px; max-width: 64ch; }
 .offer { max-width: 760px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 44px; display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
 .offer h2 { font-size: clamp(30px, 4vw, 44px); }
 .price { font-family: "Anton"; font-size: 64px; line-height: 1; color: var(--accent); }
-.price small { display: block; font-family: "Bricolage"; font-size: 15px; color: var(--muted); margin-top: 8px; }
+.price s { display: block; font-size: 30px; margin-bottom: 4px; }
+.price small { display: block; font-family: "Bricolage"; font-size: 15px; line-height: 1.6; color: var(--muted); margin-top: 8px; }
 .offer ul { margin: 18px 0 0; padding-left: 20px; color: var(--muted); }
 .offer .btn { margin-top: 26px; }
 .secure { color: var(--muted); font-size: 14px; margin-top: 12px; }
@@ -175,6 +185,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
   .routes { grid-template-columns: 1fr; }
   .route + .route { border-left: 0; border-top: 1px solid var(--line); }
   .offer { grid-template-columns: 1fr; padding: 30px; }
+  .offer .price { order: -1; }
 }
 @media (max-width: 520px) {
   body { font-size: 16px; }
@@ -191,7 +202,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">Cartoon <b>by</b> Comment</a>
-    <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8">Get the book</a>
+    <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8?discount_code=LAUNCH29">Get it for $29</a>
   </div>
 </header>
 
@@ -202,9 +213,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
         <h1>Make a cartoon series your viewers <em>vote on.</em></h1>
         <p class="lead">Claude draws every frame with code, so your character looks the same in every episode. Guide and starter files included.</p>
         <div class="ctas">
-          <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8">Get the book</a>
+          <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8?discount_code=LAUNCH29">Get it for $29</a>
           <a class="btn btn-ghost" href="#inside">See inside</a>
         </div>
+        <p class="launch"><s>$39</s> <strong>$29</strong> launch price for the first 50 buyers. Code <b>LAUNCH29</b> is applied for you at checkout.</p>
       </div>
       <figure class="phone" style="margin:0">
         <div class="frame">
@@ -217,9 +229,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
 
   <div class="band">
     <div class="wrap">
-      <span>Early edition: <strong>$29</strong> for the first 50 buyers with code</span>
+      <span class="tag">Launch price</span>
+      <span><s>$39</s> <strong>$29</strong> for the first 50 buyers with code</span>
       <button class="code" type="button" data-code="LAUNCH29" aria-label="Copy the code LAUNCH29">LAUNCH29</button>
-      <span>14-day refund</span>
+      <span class="muted">Already applied at checkout · 14-day refund</span>
     </div>
   </div>
 
@@ -403,10 +416,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
             <li>The starter project</li>
             <li>20 prompts, 3 templates and the agent brief</li>
           </ul>
-          <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8">Get the book</a>
+          <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8?discount_code=LAUNCH29">Get it for $29</a>
           <p class="secure">By Valter Mendes. 14-day refund, no questions asked. Secure checkout by Polar.</p>
         </div>
-        <div class="price">$39<small>$29 with <button class="code" type="button" data-code="LAUNCH29" aria-label="Copy the code LAUNCH29">LAUNCH29</button><br>for the first 50</small></div>
+        <div class="price"><s>$39</s>$29<small>with code <button class="code" type="button" data-code="LAUNCH29" aria-label="Copy the code LAUNCH29">LAUNCH29</button><br>applied for you at checkout.<br>First 50 buyers only.</small></div>
       </div>
     </div>
   </section>
