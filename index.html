@@ -76,6 +76,15 @@ section { padding: 88px 0; }
 .band .tag { font-family: "Anton", sans-serif; text-transform: uppercase; letter-spacing: .04em; font-size: 15px; color: var(--accent-ink); background: var(--accent); border-radius: 999px; padding: 4px 12px; }
 .band .muted { color: var(--muted); font-size: 15px; }
 .band .code { font-size: 18px; padding: 8px 16px; outline: 2px dashed var(--accent); outline-offset: 3px; }
+.hi { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--muted); font-size: 15px; text-align: center; padding: 10px 16px; }
+.hi a { color: var(--accent); font-weight: 600; }
+.need { margin-top: 8px; color: var(--muted); font-size: 14px; }
+.vs .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.vs .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 22px; }
+.vs .card h3 { font-size: 20px; margin: 0 0 8px; }
+.vs .card p { color: var(--muted); margin: 0; }
+.vs .card .no { color: var(--muted); font-size: 14px; margin-top: 10px; border-top: 1px dashed var(--line); padding-top: 10px; }
+@media (max-width: 900px) { .vs .grid { grid-template-columns: 1fr; } }
 .launch { margin-top: 18px; color: var(--muted); font-size: 15px; }
 .launch strong { color: var(--accent); }
 .launch b { font-family: "JBMono", monospace; color: var(--text); }
@@ -209,16 +218,18 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
 </header>
 
 <main id="top">
+  <p class="hi">Here from Pickle? Today's vote is on <a href="https://www.instagram.com/familyforpickle/">@familyforpickle</a>. Want to make a series like it? Read on.</p>
   <section class="hero">
     <div class="wrap">
       <div>
         <h1>Make a cartoon series your viewers <em>vote on.</em></h1>
-        <p class="lead">Claude draws every frame with code, so your character looks the same in every episode. Guide and starter files included.</p>
+        <p class="lead">No drawing skills, no video editor, no face on camera. Claude draws every frame with code, so your character looks the same in every episode. Guide, starter files and a Claude Code skill included.</p>
         <div class="ctas">
           <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_2QtrgX9uOSJlS63IUgs0LxJiUuUUB7aBhB8ca3ZKPg8?discount_code=LAUNCH29">Get it for $29</a>
           <a class="btn btn-ghost" href="#inside">See inside</a>
         </div>
         <p class="launch"><s>$39</s> <strong>$29</strong> launch price for the first 50 buyers. Code <b>LAUNCH29</b> is applied for you at checkout.</p>
+        <p class="need">You need a computer and Claude Pro ($20/month). 14-day refund.</p>
       </div>
       <figure class="phone" style="margin:0">
         <div class="frame">
@@ -255,6 +266,17 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
     </div>
   </section>
 
+
+  <section class="vs">
+    <div class="wrap">
+      <h2 class="reveal">Why code, and not an AI video tool?</h2>
+      <div class="grid">
+        <div class="card reveal"><h3>The same character, every day</h3><p>Your character is drawn from the same code in every episode, so it never drifts.</p><p class="no">Video generators redraw it every clip.</p></div>
+        <div class="card reveal"><h3>Fix one frame, not the whole clip</h3><p>Wrong ear? Ask Claude to change it. Everything else stays as it was.</p><p class="no">Generators make you roll the dice again.</p></div>
+        <div class="card reveal"><h3>Render free, as often as you like</h3><p>Episodes render on your own computer. No credits per clip.</p><p class="no">Generators charge for every try.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section class="how">
     <div class="wrap">
@@ -399,7 +421,6 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
         <details><summary>How long does an episode take?</summary><p>Setup takes an evening. Your first episode takes a few days, because you design the character and the world. Later episodes reuse the character, the sets and the tools, so they go faster.</p></details>
         <details><summary>What does it cost per month?</summary><p>Claude Pro is $20 a month and runs Claude Code. A natural paid voice is optional (ElevenLabs Starter, $6 a month); your own voice or the computer's voice is free. The renderer and the sounds in the book are free.</p></details>
         <details><summary>I have never used a terminal. Can I do this?</summary><p>Yes. The book shows the few commands you need, and Claude Code can run the setup for you: you paste one prompt and approve each step.</p></details>
-        <details><summary>Why not just use an AI video tool?</summary><p>Video generators redraw the character every clip, so it drifts, and every clip costs credits. Here Claude writes code that draws the character, so it stays the same every day, every frame can be fixed, and rendering is free on your own computer.</p></details>
         <details><summary>What if nobody votes?</summary><p>The book has a section for that: easy one-word questions, your own pinned vote comment, and an honest way to decide on screen when only a few people vote.</p></details>
         <details><summary>What is the Claude Code skill?</summary><p>A folder you copy into Claude Code. After that you say "make Day 1 of my series" and Claude follows the book in order, shows you each part of the episode and waits for your yes before it moves on. It never spends money or posts without asking.</p></details>
         <details><summary>Can I get a refund?</summary><p>Yes. 14 days, no questions asked: reply to your receipt email.</p></details>
@@ -414,6 +435,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wr
       <div class="offer reveal">
         <div>
           <h2>Start your series</h2>
+          <p class="lead" style="margin:10px 0 0">For creators who want a daily series without drawing or filming. Not for anyone who wants zero setup or guaranteed views.</p>
           <ul>
             <li>The 61-page e-book, plus later editions free</li>
             <li>The starter project</li>
